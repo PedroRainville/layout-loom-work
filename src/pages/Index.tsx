@@ -27,6 +27,33 @@ const Index = () => {
           >
             CRIAR CONTA
           </Button>
+
+          <Button 
+            onClick={() => navigate("/partners")}
+            variant="outline"
+            className="w-full" 
+            size="lg"
+          >
+            PARCEIROS
+          </Button>
+
+          <Button 
+            onClick={() => navigate("/properties")}
+            variant="outline"
+            className="w-full" 
+            size="lg"
+          >
+            IMÓVEIS
+          </Button>
+
+          <Button 
+            onClick={() => navigate("/my-properties")}
+            variant="outline"
+            className="w-full" 
+            size="lg"
+          >
+            MEUS IMÓVEIS
+          </Button>
         </div>
       </div>
     </div>
