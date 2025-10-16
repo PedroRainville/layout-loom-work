@@ -1,5 +1,6 @@
 import { ArrowLeft, Search, Bell } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Logo from "@/components/Logo";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,7 @@ import { BottomNav } from "@/components/BottomNav";
 
 export default function PropertiesForSale() {
   const navigate = useNavigate();
+  const [selectedStatus, setSelectedStatus] = useState("Todos");
 
   const statusOptions = ["Todos", "Não Respondido", "Em negociação", "Bloqueado", "Vendido"];
 
@@ -61,9 +63,10 @@ export default function PropertiesForSale() {
             {statusOptions.map((status, index) => (
               <Button
                 key={index}
-                variant={status === "Não Respondido" ? "default" : "outline"}
+                variant={selectedStatus === status ? "default" : "outline"}
                 size="sm"
                 className="text-xs"
+                onClick={() => setSelectedStatus(status)}
               >
                 {status}
               </Button>
